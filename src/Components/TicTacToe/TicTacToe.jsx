@@ -39,8 +39,8 @@ export const TicTacToe = () => {
             ){
                 console.log('A player has won!'); 
                 setLock(true);
-                setMessage(` Player ${count%2 === 0 ? "2" : "1"}🏆 wins!`);
-                confetti(); // Déclencher les confettis lorsque le joueur gagne
+                setMessage(`🏆Player ${count%2 === 0 ? "2" : "1"} wins!🏆`); 
+                confetti();
             } else if(count === 8){
                 setLock(true);
                 setMessage("It's a tie!"); 
@@ -60,37 +60,34 @@ export const TicTacToe = () => {
         }
     }    
 
-    return (
-        <div className='container'>
-            <h1 className='title'> Tic Tac Toe game in  <span> React</span></h1>
-           
-            <div className='board'>
-                <div className='row1'>
-                    <div className='square' onClick={(e)=>{toggle(e,0)}}></div>
-                    <div className='square' onClick={(e)=>{toggle(e,1)}}></div>
-                    <div className='square' onClick={(e)=>{toggle(e,2)}}></div>
-                </div>
-                <div className='row2'>
-                    <div className='square' onClick={(e)=>{toggle(e,3)}}></div>
-                    <div className='square' onClick={(e)=>{toggle(e,4)}}></div>
-                    <div className='square' onClick={(e)=>{toggle(e,5)}}></div>
-                </div>
-                <div className='row3'>
-                    <div className='square' onClick={(e)=>{toggle(e,6)}}></div>
-                    <div className='square' onClick={(e)=>{toggle(e,7)}}></div>
-                    <div className='square' onClick={(e)=>{toggle(e,8)}}></div>
-                </div>
+  return (
+    <div className='container'>
+        <h1 className='title'> Tic Tac Toe game in  <span> React</span></h1>
+       
+        <div className='board'>
+            <div className='row1'>
+                <div className='square' onClick={(e)=>{toggle(e,0)}}></div>
+                <div className='square' onClick={(e)=>{toggle(e,1)}}></div>
+                <div className='square' onClick={(e)=>{toggle(e,2)}}></div>
             </div>
-            <section className="confetti">
-                {!bestTime && !bestDiceRoll && <h1>Choose a React state, and click celebrate!</h1>} 
-                {message && (
-                    <h1>
-                        <Message msg={message} />
-                    </h1>
-                )}
-                
-            </section>
-            <button className='reset' onClick={reset} >Reset</button>
+            <div className='row2'>
+                <div className='square' onClick={(e)=>{toggle(e,3)}}></div>
+                <div className='square' onClick={(e)=>{toggle(e,4)}}></div>
+                <div className='square' onClick={(e)=>{toggle(e,5)}}></div>
+            </div>
+            <div className='row3'>
+                <div className='square' onClick={(e)=>{toggle(e,6)}}></div>
+                <div className='square' onClick={(e)=>{toggle(e,7)}}></div>
+                <div className='square' onClick={(e)=>{toggle(e,8)}}></div>
+            </div>
         </div>
-    )
+         <section className="confetti">
+   
+
+    </section>
+        {message && <Message msg={message} />}
+    
+        <button className='reset' onClick={reset} >Reset</button>
+    </div>
+  )
 }

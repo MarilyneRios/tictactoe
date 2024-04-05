@@ -1,12 +1,12 @@
 import React from 'react'
-
-const Player = (name) => {
+import './PlayerCSS.css'
+const Player = ({ name, setName, number }) => {
   return (
-    <div>
-    <label>Enter the player name :</label>
-    <input>{name}</input>
-    </div>
-  )
+      <div className='player'>
+          <label className='label-player'>Enter the player {number} name :</label>
+          <input className='input-player' value={name} onChange={(e) => setName(e.target.value)} />
+      </div>
+  );
 }
 
 export default Player

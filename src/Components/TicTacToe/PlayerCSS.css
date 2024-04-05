@@ -1,0 +1,22 @@
+.player{
+    background-color: aliceblue;
+    width: 15rem;
+    height: 150px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    border: 2px solid #04eef7;
+}
+
+.label-player{
+    margin-top: 1rem;
+}
+
+.input-player {
+    border-radius: 55px;
+    padding: 1rem;
+    margin: 1rem;
+}
