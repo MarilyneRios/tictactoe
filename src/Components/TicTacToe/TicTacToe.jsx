@@ -4,8 +4,10 @@ import circle_icon from '../Assets/available.png';
 import x_icon from '../Assets/letter-x.png';
 import Message from './Message'; 
 import useConfetti from "../../hooks/useConfetti"
+import Player from './Player';
 
-export const TicTacToe = () => {
+export const TicTacToe = ({ player1Name, player2Name }) => {
+
     let [data, setData] = useState(["","","","","","","","",""]);
     let [count,setCount]=useState(0);
     let [lock, setLock]= useState(false);
@@ -39,7 +41,7 @@ export const TicTacToe = () => {
             ){
                 console.log('A player has won!'); 
                 setLock(true);
-                setMessage(`🏆Player ${count%2 === 0 ? "2" : "1"} wins!🏆`); 
+                setMessage(`🏆${count%2 === 0 ? player2Name : player1Name} wins!🏆`); 
                 confetti();
             } else if(count === 8){
                 setLock(true);
@@ -63,7 +65,7 @@ export const TicTacToe = () => {
   return (
     <div className='container'>
         <h1 className='title'> Tic Tac Toe game in  <span> React</span></h1>
-       
+ 
         <div className='board'>
             <div className='row1'>
                 <div className='square' onClick={(e)=>{toggle(e,0)}}></div>
@@ -82,11 +84,8 @@ export const TicTacToe = () => {
             </div>
         </div>
          <section className="confetti">
-   
-
     </section>
-        {message && <Message msg={message} />}
-    
+        {message && <Message msg={message} />}  
         <button className='reset' onClick={reset} >Reset</button>
     </div>
   )
