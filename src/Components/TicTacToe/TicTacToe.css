@@ -4,23 +4,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 70vh;
 }
 
-.title{
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #edebf5;
-}
-.title span {
-    color: #04eef7;
-    margin-left: 0.5rem;
-    font-weight: 900;
-    font-size:larger;
+.message{
+    margin-top:1.5rem;
 }
 
 .reset{
@@ -35,7 +23,7 @@
     font-weight: 600;
     color: #200785;
     border: 2px solid #04eef7;
-    margin-top: 1rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
 }
 

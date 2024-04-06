@@ -1,7 +1,7 @@
 .player{
     background-color: aliceblue;
     width: 15rem;
-    height: 150px;
+    height: 100px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -12,11 +12,11 @@
 }
 
 .label-player{
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
 .input-player {
     border-radius: 55px;
-    padding: 1rem;
+    padding: 0.2rem;
     margin: 1rem;
 }

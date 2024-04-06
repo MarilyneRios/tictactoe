@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import './TicTacToe.css'
 import circle_icon from '../Assets/available.png';
 import x_icon from '../Assets/letter-x.png';
-import Message from './Message'; 
+import Message from '../message/Message'; 
 import useConfetti from "../../hooks/useConfetti"
-import Player from './Player';
+
 
 export const TicTacToe = ({ player1Name, player2Name }) => {
 
@@ -12,9 +12,8 @@ export const TicTacToe = ({ player1Name, player2Name }) => {
     let [count,setCount]=useState(0);
     let [lock, setLock]= useState(false);
     let [message, setMessage] = useState(""); 
-    const [bestTime, setBestTime] = useState(false);
-    const [bestDiceRoll, setBestDiceRoll] = useState(false);
-    const { confetti, newBestTime, newBestDiceRoll, newBestGame } = useConfetti({ bestTime, setBestTime, bestDiceRoll, setBestDiceRoll });
+   
+    const { confetti} =  useConfetti();
 
     const toggle = (e,num) => {
         if(lock){
@@ -64,8 +63,7 @@ export const TicTacToe = ({ player1Name, player2Name }) => {
 
   return (
     <div className='container'>
-        <h1 className='title'> Tic Tac Toe game in  <span> React</span></h1>
- 
+      
         <div className='board'>
             <div className='row1'>
                 <div className='square' onClick={(e)=>{toggle(e,0)}}></div>
@@ -85,7 +83,10 @@ export const TicTacToe = ({ player1Name, player2Name }) => {
         </div>
          <section className="confetti">
     </section>
-        {message && <Message msg={message} />}  
+    <div className='message'>
+     {message && <Message msg={message} />}  
+    </div>
+       
         <button className='reset' onClick={reset} >Reset</button>
     </div>
   )
