@@ -38,7 +38,7 @@
     width: 26rem;
     border-radius: 22px;
     display: flex;
-    margin : auto;
+    margin : 0 auto;
     justify-content: center;
     align-items: center;
 }
@@ -59,17 +59,9 @@
 }
 
 @media screen and (max-width: 1440px) {
-
-    .title{
-        margin-top: 4rem;
-        margin-bottom: 2rem;
-        font-size: 3rem;
-    }
-    
-    .reset{
-       
-        margin-top: 2rem;
-        margin-bottom: 4rem;
+ 
+    .reset{ 
+        margin-top: 1rem;
     }
 
     .board{
@@ -84,17 +76,28 @@
     }
 
 }
-@media screen and (max-width: 480px) {
 
-    .title{
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-        font-size: 2rem;
+@media screen and (max-width: 15in) {
+    .reset {
+        margin-top: 1rem;
     }
+
+    .board {
+        height: 15rem; 
+        width: 15rem; 
+    }
+
+    .square {
+        height: 4rem; 
+        width: 4rem; 
+        margin: 0.3rem; 
+}
+}
+
+@media screen and (max-width: 480px) {
     
     .reset{
-        margin-top: 2rem;
-        margin-bottom: 2.5rem;
+        margin-top: 1rem;
     }
 
     .board{

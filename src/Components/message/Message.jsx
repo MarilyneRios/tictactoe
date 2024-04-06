@@ -1,4 +1,5 @@
 import React from 'react'
+import './messageCss.css'
 
 const Message = ({msg}) => {
 
